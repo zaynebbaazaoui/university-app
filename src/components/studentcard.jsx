@@ -9,10 +9,8 @@ function StudentCard(props) {
        <p><strong>Email:</strong>{props.email}</p>
        <p><strong>Telephone:</strong>{props.telephone}</p>
        <p><strong>Filiere:</strong>{props.filiere}</p>
-       <p><strong>annee d etude:</strong>2026-2027</p>
-       <p><strong>Groupe:</strong>{props.groupe}</p>
-       <p><strong>Ville:</strong>{props.ville}</p>
-       <a href="mailto:benzeinab488@gmail.com"> <button>contacter</button> </a>
+       <p><strong>Anne d etude</strong>{props.anneedetude}</p>
+       <a href="mailto:${props.email}"> <button>contacter</button> </a>
     </div>
   );
 }
