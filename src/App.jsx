@@ -3,12 +3,17 @@ import './App.css'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import {Counter} from './components/Counter'
 import StudentCard from './components/studentcard';
 import bilel from './assets/bilel.jpg'
 import nour from './assets/nour.avif'
 import slim from './assets/slim.avif'
+import yassine from './assets/yassine.jpg'
+import { useState } from 'react';
 
-const etudiants = [
+
+function App() {
+  const [etudiants, setEtudiants] = useState([
   {
     prenom:"Slim",
     nom:"boubaker",
@@ -37,12 +42,26 @@ const etudiants = [
     image:bilel,
   },
 
-]
-function App() {
+])
+  function ajouterEtudiant(){
+    const nouvelEtudiant = {
+      nom: "Ben Salem",
+      prenom: "Yassine",
+      email: "yassine.bensalem@gmail.com",
+      telephone: "65789965",
+      filiere: "GLSI2",
+      anneedetude:"2026-2027",
+      image:yassine,
+    };
+    setEtudiants([...etudiants, nouvelEtudiant]);
+  }
   return(
     <div className="app">
       <Header />
       <Navbar />
+      <div className="actions">
+        <button onClick={ajouterEtudiant}>+Ajouter un étudiant</button>
+      </div>
       <div className="container">
       {etudiants.map((etudiant)=>(
         <StudentCard
